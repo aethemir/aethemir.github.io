@@ -68,6 +68,10 @@ i, em {
   font-style: italic;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* ---------- Themes ---------- */
 @media (prefers-color-scheme: dark) {
   body:not(.light):not(.sepia):not(.dark) {
