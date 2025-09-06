@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Framing the Wind — Amir Rassouli</title>
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    /* ---------- Typography & Layout ---------- */
+    :root {
+      --container-width: 5.75in;
+      --font-body: "Palatino";
+      --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --size-body: 13.6pt;
+      --size-title: 19pt; 
+      --leading: 1.6;
+      --para-space: 1.05rem;
+    }
+
+    @font-face {
+      font-family: "Palatino";
+      src: url("/essays/fonts/palatino.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: var(--size-body);
+      line-height: var(--leading);
+      letter-spacing: 0.003em;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      font-kerning: normal;
+      hyphens: auto;
+      transition: background-color .3s ease, color .3s ease;
+    }
+
+    main.article {
+      width: min(var(--container-width), calc(100vw - 2rem));
+      margin: 10vh auto 16vh;
+    }
+
+    h1 {
+      font-family: var(--font-body);
+      font-size: var(--size-title);
+      line-height: 1.3;
+      font-weight: 700;
+      margin: 0 0 .25rem 0;
+      text-align: center;
+    }
+
+    /* Author */
+    main.article > p:first-of-type {
+      text-align: center;
+      margin-top: .25rem;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      margin: 0 0 var(--para-space) 0;
+      text-align: justify;
+      margin-left: 0.7rem;
+      letter-spacing: -0.3px;
+      margin-bottom: 40px;
+    }
+
+
+    i, em {
+      font-style: italic;
+    }
+
+    /* ---------- Themes ---------- */
+    /* System default (no class) */
+    body {
+      background: #ffffff;
+      color: #000000;
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not(.light):not(.sepia):not(.dark) {
+        background: #151515;
+        color: #e7e7e7;
+      }
+    }
+
+    /* Overrides via class */
+    body.light {
+      background: #ffffff;
+      color: #000000;
+    }
+    body.sepia {
+      background: #f7f1e4;
+      color: #262523;
+    }
+    body.dark {
+      background: #151515;
+      color: #e7e7e7;
+    }
+
+    /* ---------- Theme Switcher UI ---------- */
+    .theme-switcher {
+      position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex
+;
+    align-items: center;
+    gap: .5rem;
+    background: rgba(127, 127, 127, .08);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(127, 127, 127, .25);
+    border-radius: 999px;
+    padding: .4rem .4rem;
+    font-family: var(--font-ui);
+    z-index: 999;
+    flex-direction: column;
+    }
+    .theme-switcher button {
+      all: unset;
+      cursor: pointer;
+      padding: .35rem .6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .theme-switcher button:hover {
+      border-color: currentColor;
+    }
+    .theme-switcher .dot {
+      display: inline-block;
+      width: .9rem;
+      height: .9rem;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: .35rem;
+      border: 1px solid rgba(0,0,0,.25);
+    }
+    /* dot colors */
+    .dot.light { background:#fff; }
+    .dot.sepia { background:#f7f1e4; }
+    .dot.dark  { background:#151515; border-color: rgba(255,255,255,.35); }
+
+    .essay-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  font-style: italic;
+  font-size: 0.95rem;
+  text-align: center;
+  border-top: 1px solid;
+  opacity: 0.9;
+}
+
+/* Theme-specific colors */
+body.light .essay-footer {
+  border-color: #ccc;
+  color: #444;
+}
+
+body.sepia .essay-footer {
+  border-color: #b8aa94;
+  color: #5c5145;
+}
+
+body.dark .essay-footer {
+  border-color: #444;
+  color: #aaa;
+}
+
+    @media (max-width: 768px) {
+  main.article {
+    width: calc(100% - 2rem);   /* keep space from screen edges */
+    margin: 5vh -5px 10vh;
+    padding: 0 1rem;            /* extra breathing room */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .theme-switcher {
+    position: static;        /* remove fixed top-right */
+    justify-content: center; /* center horizontally */
+    margin: 1rem auto;
+    flex-direction: row-reverse;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <nav class="theme-switcher" aria-label="Reading theme">
+    <button id="btn-light" data-theme="light" title="Light (white)"><span class="dot light" style="margin-right: -0.3px;"></span></button>
+    <button id="btn-sepia" data-theme="sepia" title="Sepia"><span class="dot sepia" style="margin-right: -0.3px;"></span></button>
+    <button id="btn-dark" data-theme="dark" title="Dark"><span class="dot dark" style="margin-right: -0.3px;"></span></button>
+  </nav>
+
+  <main class="article">
+    
+<h1 style="margin-left: 0.7rem;"><b>Framing the Wind </b></h1>
+
+<p>Amir Rassouli </p>
+
+<p> The empty walls of Laura&#x2019;s new apartment stared back at her, as blank and daunting as the canvas before her. She stood in the center of the room, paintbrush in hand, frozen between the urge to recreate the <i>familiar</i> landscapes of home and the whisper of something new, something yet <i>unexplored</i>. In that moment of hesitation, caught between who she was and who she might become, Laura reflected the eternal human struggle: <i>How do we change and grow while remaining true to ourselves?</i>   </p>
+  
+  <p>When it says &#x2018;true&#x2019; it doesn&#x2019;t imply <i>factually</i> true, but <i>essentially </i>true. In other means, when Laura was a child and wanted to see herself in the mirror, she didn&#x2019;t expect to see her face in its current age. She was certain that she would see herself as her expected age. In <i>fact</i>, by getting older, her facial features have grown, but in <i>essence</i>, Laura has maintained the same anatomical face with fixed genes that expressed over time as expected, with a name that&#x2019;s still Laura, and with a sense of familiarity that is relieving to her.</p>   
+  
+  <p>This realization lit a new question in Laura&#x2019;s mind: If her physical self could change so gradually yet profoundly without losing her let&#x2019;s say <i>identity</i>, could the same be true for the intangible aspects of her being? Were her <i>personality</i>, and her very <i>character</i> as malleable as her facial features? and if so, how could she ensure that the core of who she was remained intact? </p>  
+  
+  <p>A couple of months ago, in a search for a new perspective, Laura had a defining moment when she tried <i>Marijuana </i>for the first time. Her surroundings seemed to come alive. Colors appeared richer, textures more vivid, the motion of objects felt impossibly fluid, and sounds more resonant, as if every <i>detail</i> of the world had become amplified. All of this, she realized, was the substance mimicking her brain&#x2019;s natural neurotransmitters. It triggered an intense burst of neural activity that overprocessed every sensation. What surprised her most, however, wasn&#x2019;t just the vividness of the experience, but the profound <i>familiarity</i> of it all; a scene she had witnessed countless times before, now reframed and reborn <i>with a little, almost imperceptible difference.</i> </p>
+
+
+<p>  But she decided to never try the substance again. Not because of its induced psychosis, but, paradoxically, because she wanted to have <i>sadness</i> among the experience, and she couldn&#x2019;t. She wanted to <i>feel</i> <i>her genuine feelings</i>, but the artificial excitement wouldn&#x2019;t allow it. She had rejected the shortcut. The easy, chemical reframing was not the answer. She had to face the authentic landscape of her own mind, even its most desolate regions.  </p>
+
+<p>Grief was never as linear as people pretended it to be. It curled, struck, and surged without warning; never a steady climb through the K&#xfc;bler-Ross stages toward healing. It was far less predictable. It had been two years since the breakup, the moment when her ex- partner told her he needed to leave, to permanently return to Iran, to care for his family. After years, they had to separate. Despite all the pain and misery, they&#x2019;d kept those last months together beautiful in its fragility, and profoundly honest. They knew the end was certain but refused to let it turn ugly. Like a stage-four romance cancer; incurable, but dignified in its dying days. That incurable past was the familiar landscape now holding her hostage. </p>
+
+<p>Then, three months ago, Laura met someone interesting. At first, it felt like a casual distraction, but the more time she spent with him, the more she found herself drawn in. His facial features were almost like her ex-partner&#x2019;s, yet with a maturity that softened the edges, both familiar and refined. The way he spoke, the quiet hesitations that gave his words weight, reminded her of what she used to love about her ex-partner, only with an ease that felt natural. His sense of humor was effortlessly amusing, something she always wanted to see in her ex-partner. It was almost as if he were an improved version of the past she hadn&#x2019;t been ready to let go of: <i>a familiar melody played in a slightly different key. </i></p>
+<p> <i> </i></p>
+<p>You have repetition in music as a key element, but to prevent boredom, you need to bend it, twist it, and let it wander just far enough to surprise the ear before returning to the theme. Like a progressive track, he carried familiar motifs but stretched them into unexpected passages.   </p>
+
+
+<p>This experience brought to her mind a growing trend on Twitter where Iranians share end-of-month random snapshots. A reflection of tired eyes in a car window at dusk, the soft imprint of a ring removed after hours of wear, a half-filled notebook with hurried thoughts. What makes them so aesthetic isn&#x2019;t the subject itself but <i>the perspective</i>: the way light slants at an angle that turns the mundane into something unexpected. It transforms clutter into composition, coincidence into intention, and fleeting moments into something timeless. </p>  
+
+<p>And in that connection, she found her clue. What fascinated Laura about this new person wasn&#x2019;t just <i>him</i>, but <i>the perspective</i> he personified. He wasn&#x2019;t a replacement for her past; he was a living demonstration of how a familiar theme could be reshaped into a new vision. Her grief, she now understood, was not just about the person she had lost, but about <i>the meaning she had lost with him.</i> The solution wasn&#x2019;t to find that exact meaning again, but to create new meaning from the memory of it. The new man had been a key that unlocked a door within her and showed her how to look at her own history without drowning. Once that door was open, the key itself became less relevant. </p>  
+
+
+<p>Laura walked back into the empty room. The blank canvas no longer seemed daunting; it glowed in the slanting afternoon light, an object of pure potential. She picked up her brush, felt its familiar weight, and then, with a hot tear traced a path down her cheek, she set it back down. It wasn&#x2019;t just about a new way to paint, but a new way to see. Her art wasn&#x2019;t about recreating a feeling on canvas, but about framing the world as it was. </p>  
+
+
+<p>She picked up her camera, and angled it toward the blank canvas, catching the reflection of the window, the dramatic shadow of the easel, and the deep indigo of the twilight sky. The empty canvas, the symbol of her fear, was now the subject. She saw the unseen current of her own life, the clutter of her past and the emptiness of her future, all held together in a composition. She took the picture. It was a portrait of a fleeting moment transformed into something timeless; an invisible force given form. She was <i>framing the wind</i>. </p>
+
+<footer class="essay-footer">
+  <p>This essay took shape between 2023 and 2025 and was published in September 2025.</p>
+</footer>
+
+
+  </main>
+
+  <script>
+    (function () {
+      const key = "reader-theme";
+      const btns = Array.from(document.querySelectorAll(".theme-switcher button"));
+      const applyActive = (theme) => {
+        btns.forEach(b => b.classList.toggle("active", b.dataset.theme === theme));
+      };
+      const setTheme = (theme) => {
+        document.body.classList.remove("light","sepia","dark");
+        if (theme) document.body.classList.add(theme);
+        localStorage.setItem(key, theme);
+        applyActive(theme);
+      };
+      // Load saved theme (if any). If none, follow system by keeping no override.
+      const saved = localStorage.getItem(key);
+      if (saved) setTheme(saved);
+      else applyActive(null);
+
+      btns.forEach(btn => btn.addEventListener("click", () => setTheme(btn.dataset.theme)));
+    })();
+  </script>
+</body>
+</html>
