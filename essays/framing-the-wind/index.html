@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Framing the Wind — Amir Rassouli</title>
+  <title>Framing the Wind — an essay by Amir Rassouli</title>
+
+  <meta property="og:title" content="Framing the Wind" />
+  <meta property="og:description" content="Amir Rassouli" />
+  <meta property="og:image" content="https://yourdomain.com/thumbnail.jpg" />
+  <meta property="og:type" content="article" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Framing the Wind" />
+  <meta name="twitter:description" content="Amir Rassouli" />
+  <meta name="twitter:image" content="https://yourdomain.com/thumbnail.jpg" />
+
   <meta name="color-scheme" content="light dark" />
   <style>
     /* ---------- Typography & Layout ---------- */
@@ -60,6 +71,8 @@
       text-align: center;
       margin-top: .25rem;
       margin-bottom: 2rem;
+      opacity: 0.9;
+      font-size: 17px;
     }
 
     p {
@@ -107,8 +120,7 @@
       position: fixed;
     top: 1rem;
     right: 1rem;
-    display: flex
-;
+    display: flex;
     align-items: center;
     gap: .5rem;
     background: rgba(127, 127, 127, .08);
@@ -119,17 +131,49 @@
     font-family: var(--font-ui);
     z-index: 999;
     flex-direction: column;
+    opacity: 0.7;
     }
-    .theme-switcher button {
-      all: unset;
-      cursor: pointer;
-      padding: .35rem .6rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-    }
-    .theme-switcher button:hover {
-      border-color: currentColor;
-    }
+    .theme-switcher button,
+.theme-switcher .home-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+
+.theme-switcher button:hover,
+.theme-switcher .home-btn:hover {
+  border-color: currentColor;
+  background: rgba(255,255,255,0.9);
+}
+
+/* Dark/sepia adjustments */
+body.dark .theme-switcher button,
+body.dark .theme-switcher .home-btn {
+  background: rgba(30,30,30,0.6);
+}
+body.dark .theme-switcher button:hover,
+body.dark .theme-switcher .home-btn:hover {
+  background: rgba(30,30,30,0.9);
+}
+
+body.sepia .theme-switcher button,
+body.sepia .theme-switcher .home-btn {
+  background: rgba(247,241,228,0.7);
+}
+body.sepia .theme-switcher button:hover,
+body.sepia .theme-switcher .home-btn:hover {
+  background: rgba(247,241,228,0.95);
+}
+
     .theme-switcher .dot {
       display: inline-block;
       width: .9rem;
@@ -148,7 +192,7 @@
   margin-top: 4rem;
   padding-top: 1.5rem;
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-align: center;
   border-top: 1px solid;
   opacity: 0.9;
@@ -170,6 +214,7 @@ body.dark .essay-footer {
   color: #aaa;
 }
 
+
     @media (max-width: 768px) {
   main.article {
     width: calc(100% - 2rem);   /* keep space from screen edges */
@@ -184,7 +229,7 @@ body.dark .essay-footer {
     position: static;        /* remove fixed top-right */
     justify-content: center; /* center horizontally */
     margin: 1rem auto;
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
 }
 
@@ -193,10 +238,21 @@ body.dark .essay-footer {
 </head>
 <body>
   <nav class="theme-switcher" aria-label="Reading theme">
-    <button id="btn-light" data-theme="light" title="Light (white)"><span class="dot light" style="margin-right: -0.3px;"></span></button>
-    <button id="btn-sepia" data-theme="sepia" title="Sepia"><span class="dot sepia" style="margin-right: -0.3px;"></span></button>
-    <button id="btn-dark" data-theme="dark" title="Dark"><span class="dot dark" style="margin-right: -0.3px;"></span></button>
+    <a href="/" id="btn-home" title="Homepage" class="home-btn">
+      🏠
+    </a>
+    <button id="btn-light" data-theme="light" title="Light (white)">
+      <span class="dot light" style="margin-right:-0.3px;"></span>
+    </button>
+    <button id="btn-sepia" data-theme="sepia" title="Sepia">
+      <span class="dot sepia" style="margin-right:-0.3px;"></span>
+    </button>
+    <button id="btn-dark" data-theme="dark" title="Dark">
+      <span class="dot dark" style="margin-right:-0.3px;"></span>
+    </button>
   </nav>
+  
+  
 
   <main class="article">
     
@@ -208,7 +264,7 @@ body.dark .essay-footer {
   
   <p>When it says &#x2018;true&#x2019; it doesn&#x2019;t imply <i>factually</i> true, but <i>essentially </i>true. In other means, when Laura was a child and wanted to see herself in the mirror, she didn&#x2019;t expect to see her face in its current age. She was certain that she would see herself as her expected age. In <i>fact</i>, by getting older, her facial features have grown, but in <i>essence</i>, Laura has maintained the same anatomical face with fixed genes that expressed over time as expected, with a name that&#x2019;s still Laura, and with a sense of familiarity that is relieving to her.</p>   
   
-  <p>This realization lit a new question in Laura&#x2019;s mind: If her physical self could change so gradually yet profoundly without losing her let&#x2019;s say <i>identity</i>, could the same be true for the intangible aspects of her being? Were her <i>personality</i>, and her very <i>character</i> as malleable as her facial features? and if so, how could she ensure that the core of who she was remained intact? </p>  
+  <p>This realization lit a new question in Laura&#x2019;s mind: If her physical self could change so gradually yet profoundly without losing her let&#x2019;s say <i>identity</i>, could the same be true for the intangible aspects of her being?
   
   <p>A couple of months ago, in a search for a new perspective, Laura had a defining moment when she tried <i>Marijuana </i>for the first time. Her surroundings seemed to come alive. Colors appeared richer, textures more vivid, the motion of objects felt impossibly fluid, and sounds more resonant, as if every <i>detail</i> of the world had become amplified. All of this, she realized, was the substance mimicking her brain&#x2019;s natural neurotransmitters. It triggered an intense burst of neural activity that overprocessed every sensation. What surprised her most, however, wasn&#x2019;t just the vividness of the experience, but the profound <i>familiarity</i> of it all; a scene she had witnessed countless times before, now reframed and reborn <i>with a little, almost imperceptible difference.</i> </p>
 
@@ -219,7 +275,7 @@ body.dark .essay-footer {
 
 <p>Then, three months ago, Laura met someone interesting. At first, it felt like a casual distraction, but the more time she spent with him, the more she found herself drawn in. His facial features were almost like her ex-partner&#x2019;s, yet with a maturity that softened the edges, both familiar and refined. The way he spoke, the quiet hesitations that gave his words weight, reminded her of what she used to love about her ex-partner, only with an ease that felt natural. His sense of humor was effortlessly amusing, something she always wanted to see in her ex-partner. It was almost as if he were an improved version of the past she hadn&#x2019;t been ready to let go of: <i>a familiar melody played in a slightly different key. </i></p>
 <p> <i> </i></p>
-<p>You have repetition in music as a key element, but to prevent boredom, you need to bend it, twist it, and let it wander just far enough to surprise the ear before returning to the theme. Like a progressive track, he carried familiar motifs but stretched them into unexpected passages.   </p>
+<p>You have repetition in music as a key element, but to prevent boredom, you need to bend it and let it wander just far enough to surprise the ear before returning to the theme. Like a progressive track, he carried familiar motifs but stretched them into unexpected passages.   </p>
 
 
 <p>This experience brought to her mind a growing trend on Twitter where Iranians share end-of-month random snapshots. A reflection of tired eyes in a car window at dusk, the soft imprint of a ring removed after hours of wear, a half-filled notebook with hurried thoughts. What makes them so aesthetic isn&#x2019;t the subject itself but <i>the perspective</i>: the way light slants at an angle that turns the mundane into something unexpected. It transforms clutter into composition, coincidence into intention, and fleeting moments into something timeless. </p>  
@@ -243,22 +299,45 @@ body.dark .essay-footer {
     (function () {
       const key = "reader-theme";
       const btns = Array.from(document.querySelectorAll(".theme-switcher button"));
+  
       const applyActive = (theme) => {
         btns.forEach(b => b.classList.toggle("active", b.dataset.theme === theme));
       };
+  
       const setTheme = (theme) => {
-        document.body.classList.remove("light","sepia","dark");
+        document.body.classList.remove("light", "sepia", "dark");
         if (theme) document.body.classList.add(theme);
         localStorage.setItem(key, theme);
         applyActive(theme);
       };
-      // Load saved theme (if any). If none, follow system by keeping no override.
+  
       const saved = localStorage.getItem(key);
-      if (saved) setTheme(saved);
-      else applyActive(null);
-
-      btns.forEach(btn => btn.addEventListener("click", () => setTheme(btn.dataset.theme)));
+  
+      if (saved) {
+        // If user has already chosen a theme, stick to it
+        setTheme(saved);
+      } else {
+        // No saved preference → check system preference
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+  
+        if (prefersLight) {
+          // System is light → default to sepia
+          setTheme("sepia");
+        } else if (prefersDark) {
+          // System is dark → keep dark
+          setTheme("dark");
+        } else {
+          // No preference → leave unset (or choose a fallback)
+          applyActive(null);
+        }
+      }
+  
+      btns.forEach(btn =>
+        btn.addEventListener("click", () => setTheme(btn.dataset.theme))
+      );
     })();
   </script>
+  
 </body>
 </html>
