@@ -207,7 +207,7 @@ body.dark .essay-footer {
     position: static;
     justify-content: center;
     margin: 1rem auto;
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
 }
 
